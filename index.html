@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skousen Works | Mechanical Design Portfolio</title>
+    <title>Skousen Works | Mechanical Design</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
@@ -13,39 +13,31 @@
         .animate-progress { animation: fillProgress 1.5s ease-out forwards; }
     </style>
 </head>
-<body class="bg-white text-slate-900 font-sans overflow-x-hidden relative">
+<body class="bg-white text-slate-900 font-sans">
 
     <div class="fixed inset-0 z-[-1] opacity-10 pointer-events-none">
         <svg class="absolute -top-16 -right-16 fill-slate-300 animate-spin-slow" width="300" height="300" viewBox="0 0 100 100">
             <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
         </svg>
-        <svg class="absolute bottom-10 right-10 text-slate-300" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><rect x="8" y="8" width="8" height="8" rx="1"/>
-        </svg>
     </div>
 
     <nav class="p-6 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <span class="text-xl font-bold tracking-tighter text-slate-900">SKOUSEN<span class="text-blue-600">WORKS</span></span>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="#about" class="text-slate-600 hover:text-blue-600 transition">About</a>
-            <a href="#skills" class="text-slate-600 hover:text-blue-600 transition">Skills</a>
-            <a href="#projects" class="text-slate-600 hover:text-blue-600 transition">Projects</a>
-            <a href="#contact" class="text-slate-600 hover:text-blue-600 transition">Contact</a>
+        <span class="text-xl font-bold tracking-tighter">SKOUSEN<span class="text-blue-600">WORKS</span></span>
+        <div class="space-x-4 md:space-x-6 text-sm font-medium">
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+            <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+            <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
         </div>
     </nav>
 
-    <header class="py-16 px-6 text-center max-w-4xl mx-auto">
-        <h1 class="text-5xl font-black mb-4 text-slate-900 italic">PRECISION DESIGN.</h1>
-        <p class="text-xl text-slate-500">Mechanical Designer | CATIA V5 & SolidWorks Specialist</p>
-    </header>
-
-    <section id="about" class="max-w-4xl mx-auto p-6 py-20 border-t border-slate-100">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="w-48 h-48 rounded-full border-4 border-blue-600 flex items-center justify-center bg-slate-50 shadow-xl flex-shrink-0">
+    <section id="about" class="max-w-4xl mx-auto p-6 py-20">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="w-48 h-48 rounded-full border-4 border-blue-600 flex items-center justify-center bg-slate-50 shadow-lg flex-shrink-0">
                 <span class="text-5xl font-bold text-slate-300">JS</span>
             </div>
             <div>
-                <h3 class="text-3xl font-bold mb-4 text-slate-900">About Me</h3>
+                <h1 class="text-4xl font-black mb-4 italic">PRECISION DESIGN.</h1>
                 <p class="text-lg text-slate-600 leading-relaxed">
                     I am a **Mechanical Designer** with a background in automotive and industrial engineering. 
                     From heavy equipment at **The PAC Group** to tool and die work at **Weld Mold Company**, 
@@ -56,54 +48,45 @@
     </section>
 
     <section id="skills" class="max-w-4xl mx-auto p-6 py-20 border-t border-slate-100">
-        <h3 class="text-3xl font-bold mb-10 text-slate-900">Technical Expertise</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="space-y-6">
-                <h4 class="text-sm font-bold uppercase tracking-widest text-blue-600">Software</h4>
-                <div>
-                    <div class="flex justify-between mb-2"><span class="font-bold">CATIA V5</span><span>95%</span></div>
-                    <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
-                        <div class="h-full bg-blue-600 animate-progress" style="--progress-width: 95%"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between mb-2"><span class="font-bold">SolidWorks</span><span>85%</span></div>
-                    <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
-                        <div class="h-full bg-blue-600 animate-progress" style="--progress-width: 85%"></div>
-                    </div>
-                </div>
+        <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest text-blue-600">Technical Skills</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <div class="flex justify-between font-bold"><span>CATIA V5</span><span>95%</span></div>
+                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full animate-progress" style="--progress-width: 95%"></div></div>
+                <div class="flex justify-between font-bold"><span>SolidWorks</span><span>85%</span></div>
+                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full animate-progress" style="--progress-width: 85%"></div></div>
             </div>
-            <div class="space-y-6">
-                <h4 class="text-sm font-bold uppercase tracking-widest text-emerald-600">Industries</h4>
-                <div>
-                    <div class="flex justify-between mb-2"><span class="font-bold">Automotive Design</span><span>90%</span></div>
-                    <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
-                        <div class="h-full bg-emerald-500 animate-progress" style="--progress-width: 90%"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between mb-2"><span class="font-bold">Tool & Die / Manufacturing</span><span>85%</span></div>
-                    <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
-                        <div class="h-full bg-emerald-500 animate-progress" style="--progress-width: 85%"></div>
-                    </div>
-                </div>
+            <div class="space-y-4">
+                <div class="flex justify-between font-bold"><span>Automotive Design</span><span>90%</span></div>
+                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-emerald-500 rounded-full animate-progress" style="--progress-width: 90%"></div></div>
+                <div class="flex justify-between font-bold"><span>Manufacturing / DFM</span><span>85%</span></div>
+                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-emerald-500 rounded-full animate-progress" style="--progress-width: 85%"></div></div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="max-w-4xl mx-auto p-6 py-20 border-t border-slate-100">
-        <h3 class="text-3xl font-bold mb-10 text-slate-900">Featured Work</h3>
+        <h3 class="text-2xl font-bold mb-8">Featured Projects</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition duration-300">
-                <div class="h-72 bg-slate-50 rounded-2xl mb-6 overflow-hidden border border-slate-100">
+            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="h-64 bg-slate-50 rounded-xl mb-4 overflow-hidden">
                     <model-viewer src="Honda Logo Stand.glb" auto-rotate camera-controls style="width:100%; height:100%;"></model-viewer>
                 </div>
-                <h4 class="font-bold text-xl text-slate-900 mb-2 italic">Honda Logo Stand</h4>
-                <p class="text-slate-500 text-sm">Custom 3D-printed display stand designed for precision fitment.</p>
+                <h4 class="font-bold text-lg">Honda Logo Stand</h4>
+                <p class="text-slate-500 text-sm">Precision 3D printed display stand.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="max-w-4xl mx-auto p-6 py-24 text-center border-t border-slate-100">
-        <h3 class="text-4xl font-bold mb-4 text-slate-900">Let's Work Together</h3>
-        <p class="text-slate-500 mb-10 text
+    <section id="contact" class="max-w-4xl mx-auto p-6 py-20 text-center border-t border-slate-100">
+        <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
+        <a href="https://www.linkedin.com/in/jacob-skousen-52b40236/" target="_blank" class="inline-flex items-center gap-2 bg-[#0a66c2] text-white px-8 py-3 rounded-xl font-bold hover:scale-105 transition shadow-lg">
+            Connect on LinkedIn
+        </a>
+    </section>
+
+    <footer class="p-8 text-center text-slate-400 text-xs uppercase tracking-widest">
+        &copy; 2024 Skousen Works
+    </footer>
+</body>
+</html>
