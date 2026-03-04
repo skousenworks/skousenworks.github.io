@@ -3,68 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skousen Works | Portfolio</title>
+    <title>Skousen Works | Mechanical Design Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <script>
+        // Optional: Tailwind configuration if needed
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Define custom colors if necessary, though default tailwind colors are used
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes drive { 0% { transform: translateX(-10vw); } 100% { transform: translateX(110vw); } }
-        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
-        .animate-drive { animation: drive 15s linear infinite; }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-spin-slow {
+            animation: spin-slow 20s linear infinite;
+        }
+
+        /* Skills progress bar animation */
+        @keyframes fillProgress {
+            from { width: 0%; }
+            to { width: var(--progress-width); }
+        }
+
+        .animate-progress {
+            animation: fillProgress 1.5s ease-out forwards;
+        }
     </style>
 </head>
-<body class="bg-[#0b1121] text-white font-sans overflow-x-hidden relative">
+<body class="bg-white text-slate-800 font-sans overflow-x-hidden relative">
 
-    <div class="fixed inset-0 z-[-1] opacity-10 pointer-events-none">
-        <svg class="absolute -top-16 -right-16 fill-slate-700 animate-spin-slow" width="300" height="300" viewBox="0 0 100 100">
+    <div class="fixed inset-0 z-[-1] opacity-5 pointer-events-none">
+        
+        <svg class="absolute -top-16 -right-16 fill-slate-300 animate-spin-slow" width="300" height="300" viewBox="0 0 100 100">
             <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
         </svg>
-    </div>
 
-    <nav class="p-6 flex justify-between items-center bg-[#0b1121]/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
-        <span class="text-xl font-bold tracking-tighter">SKOUSEN<span class="text-blue-500">WORKS</span></span>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="#services" class="hover:text-blue-400 transition">Services</a>
-            <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-        </div>
-    </nav>
+        <svg class="absolute bottom-1/4 left-1/4 fill-slate-200 animate-spin-slow" width="200" height="200" viewBox="0 0 100 100" style="animation-direction: reverse;">
+            <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
+        </svg>
 
-    <header class="py-20 px-6 text-center max-w-4xl mx-auto">
-        <h2 class="text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent italic">Precision Engineering.</h2>
-        <p class="text-lg text-slate-400 mb-10">Mechanical Designer specialized in CATIA & SolidWorks.</p>
-        
-        <div id="services" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-            <div class="p-4 bg-slate-800/40 border border-slate-700 rounded-xl hover:border-blue-500 transition">
-                <div class="text-2xl mb-2">📐</div>
-                <h3 class="font-bold text-sm uppercase tracking-wider">Design</h3>
-            </div>
-            <div class="p-4 bg-slate-800/40 border border-slate-700 rounded-xl hover:border-blue-500 transition">
-                <div class="text-2xl mb-2">🖨️</div>
-                <h3 class="font-bold text-sm uppercase tracking-wider">3D Print</h3>
-            </div>
-            <div class="p-4 bg-slate-800/40 border border-slate-700 rounded-xl hover:border-blue-500 transition">
-                <div class="text-2xl mb-2">🛠️</div>
-                <h3 class="font-bold text-sm uppercase tracking-wider">Prototype</h3>
-            </div>
-            <div class="p-4 bg-slate-800/40 border border-slate-700 rounded-xl hover:border-blue-500 transition">
-                <div class="text-2xl mb-2">🤖</div>
-                <h3 class="font-bold text-sm uppercase tracking-wider">Automation</h3>
-            </div>
-        </div>
-    </header>
-
-    <section id="projects" class="max-w-5xl mx-auto p-6 pb-24">
-        <h3 class="text-2xl font-bold mb-8 border-l-4 border-blue-500 pl-4">Past Projects</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 backdrop-blur-sm shadow-xl">
-                <div class="w-full h-64 bg-slate-900 rounded-xl overflow-hidden mb-6 border border-slate-800">
-                    <model-viewer 
-                        src="Honda Logo Stand.glb" 
-                        auto-rotate camera-controls
-                        style="width: 100%; height: 100%; filter: drop-shadow(0 0 5px #3b82f6);">
-                    </model-viewer>
-                </div>
-                <h4 class="font-bold text-xl mb-2 italic">Honda Logo Stand</h4>
-                <p class="text-slate-400 text-sm mb-4">A custom-engineered 3D print project designed for high-precision fitment and aesthetic display.</p>
-                <span
+        <svg class="absolute top-1/2 right-1/4 fill-slate-200 animate-spin-slow" width="100" height="100" viewBox="0 0 100 100">
+            <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
+        </svg>
