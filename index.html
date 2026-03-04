@@ -6,51 +6,38 @@
     <title>Skousen Works | Mechanical Design Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-    <script>
-        // Optional: Tailwind configuration if needed
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        // Define custom colors if necessary, though default tailwind colors are used
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .animate-spin-slow {
-            animation: spin-slow 20s linear infinite;
-        }
-
-        /* Skills progress bar animation */
-        @keyframes fillProgress {
-            from { width: 0%; }
-            to { width: var(--progress-width); }
-        }
-
-        .animate-progress {
-            animation: fillProgress 1.5s ease-out forwards;
-        }
+        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+        @keyframes fillProgress { from { width: 0%; } to { width: var(--progress-width); } }
+        .animate-progress { animation: fillProgress 1.5s ease-out forwards; }
     </style>
 </head>
 <body class="bg-white text-slate-800 font-sans overflow-x-hidden relative">
 
     <div class="fixed inset-0 z-[-1] opacity-5 pointer-events-none">
-        
         <svg class="absolute -top-16 -right-16 fill-slate-300 animate-spin-slow" width="300" height="300" viewBox="0 0 100 100">
             <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
         </svg>
+        <svg class="absolute bottom-10 right-10 text-slate-200" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+    </div>
 
-        <svg class="absolute bottom-1/4 left-1/4 fill-slate-200 animate-spin-slow" width="200" height="200" viewBox="0 0 100 100" style="animation-direction: reverse;">
-            <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
-        </svg>
+    <nav class="p-6 flex justify-between items-center bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <span class="text-xl font-bold tracking-tighter">SKOUSEN<span class="text-blue-600">WORKS</span></span>
+        <div class="space-x-6 text-sm font-medium">
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+            <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+            <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+        </div>
+    </nav>
 
-        <svg class="absolute top-1/2 right-1/4 fill-slate-200 animate-spin-slow" width="100" height="100" viewBox="0 0 100 100">
-            <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
-        </svg>
+    <section id="about" class="max-w-4xl mx-auto p-6 py-20">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="w-48 h-48 rounded-full border-4 border-blue-600 flex items-center justify-center bg-slate-100 flex-shrink-0">
+                <span class="text-5xl font-bold text-slate-400">JS</span>
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold mb-4">About Me</h3>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Mechanical Designer with a background in automotive
