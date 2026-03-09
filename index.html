@@ -5,122 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skousen Works | Mechanical Design & Manufacturing Automation</title>
 
-  <!-- Simple, reliable system font stack for performance -->
   <style>
-    :root{
-      --bg:#f7f7f9;
-      --text:#1e1e24;
-      --muted:#5c6670;
-      --brand:#2d6cdf;      /* Accent color */
-      --card:#ffffff;
-      --radius:14px;
-
-      /* Spacing scale (8px baseline) */
-      --s-1:8px;
-      --s-2:12px;
-      --s-3:16px;
-      --s-4:24px;
-      --s-5:32px;
-      --s-6:48px;
-      --s-7:72px;
-      --s-8:96px;
+    :root {
+      --bg: #f7f7f9;
+      --text: #1e1e24;
+      --muted: #5c6670;
+      --brand: #2d6cdf;      
+      --card: #ffffff;
+      --radius: 14px;
+      --s-3: 16px;
+      --s-5: 32px;
+      --s-7: 72px;
+      --s-8: 96px;
     }
 
-    /* Reset-ish */
-    *,*::before,*::after{box-sizing:border-box;}
-    body{
-      margin:0; background:var(--bg); color:var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      line-height:1.55;
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.55;
     }
-    img{max-width:100%; height:auto; display:block;}
-    a{color:var(--brand); text-decoration:none;}
-    .container{max-width:1100px; margin:0 auto; padding:0 var(--s-3);}
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--brand); text-decoration: none; transition: 0.2s; }
+    a:hover { opacity: 0.8; }
+    
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 var(--s-3); }
 
-    /* Header / Hero */
-    .hero{
-      position:relative; isolation:isolate; overflow:hidden;
-      background:#0f172a; color:#fff;
+    /* Nav */
+    nav {
+      background: #0f172a; padding: 1rem 0;
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 100;
     }
-    .hero__media{
-      position:absolute; inset:0; z-index:0; overflow:hidden;
-    }
-    .hero__media img{
-      width:100%; height:100%; object-fit:cover; object-position:center;
-      filter:grayscale(0.1) brightness(0.75) contrast(1.1);
-      transform:scale(1.02);
-    }
-    .hero__overlay{
-      position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,23,42,0.60), rgba(15,23,42,0.85));
-      z-index:1;
-    }
-    .hero__content{
-      position:relative; z-index:2; padding:var(--s-8) 0 var(--s-7);
-      text-align:center;
-    }
-    .hero h1{
-      font-size:clamp(28px, 4vw, 44px);
-      margin:0 0 var(--s-3);
-      letter-spacing:0.2px;
-    }
-    .hero p{
-      max-width:720px; margin:0 auto var(--s-5); color:#e5e7eb;
-      font-size:clamp(16px, 2.2vw, 18px);
-    }
-    .btn{
-      display:inline-block; padding:12px 22px; border-radius:10px; font-weight:600;
-      background:var(--brand); color:#fff;
-      box-shadow:0 10px 18px rgba(45,108,223,0.25);
-    }
-    .btn--ghost{
-      background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4);
-      margin-left:var(--s-3);
-    }
+    .nav-content { display: flex; justify-content: space-between; width: 100%; align-items: center; }
+    .logo { color: #fff; font-weight: 700; font-size: 1.2rem; }
+    .nav-links a { color: #fff; margin-left: var(--s-3); font-size: 0.9rem; }
 
-    /* Sections */
-    section{padding:var(--s-7) 0;}
-    section h2{
-      text-align:center; margin:0 0 var(--s-5); font-size:clamp(22px, 2.8vw, 30px);
-      letter-spacing:0.2px;
+    /* Hero */
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      background: #0f172a; color: #fff; min-height: 60vh;
+      display: flex; align-items: center;
     }
-    .lede{max-width:760px; margin:0 auto var(--s-5); color:var(--muted); text-align:center;}
+    .hero__media { position: absolute; inset: 0; z-index: 0; }
+    .hero__media img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(0.1) brightness(0.4);
+    }
+    .hero__content { position: relative; z-index: 2; padding: var(--s-8) 0; text-align: center; width: 100%; }
+    .hero h1 { font-size: clamp(32px, 5vw, 56px); margin-bottom: var(--s-3); }
+    .hero p { max-width: 700px; margin: 0 auto var(--s-5); color: #e5e7eb; font-size: 1.1rem; }
 
-    /* Cards / Grids */
-    .grid{
-      display:grid; gap:var(--s-4);
-      grid-template-columns:repeat(12, 1fr);
+    /* Buttons */
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 10px; font-weight: 600;
+      background: var(--brand); color: #fff; border: none; cursor: pointer;
     }
-    .cards > .card{
-      grid-column:span 6;
-    }
-    @media (max-width:900px){
-      .cards > .card{grid-column:span 12;}
-    }
-    .card{
-      background:var(--card); border-radius:var(--radius); padding:var(--s-5);
-      box-shadow:0 8px 24px rgba(16,24,40,0.06);
-    }
-    .card h3{margin:0 0 var(--s-2); font-size:20px;}
-    .card p{margin:0; color:var(--muted);}
-    .card ul{margin:var(--s-3) 0 0; padding-left:1.2rem; color:var(--muted);}
-    .card li{margin:6px 0;}
+    .btn--ghost { background: transparent; border: 1px solid rgba(255,255,255,0.4); margin-left: 10px; }
 
-    /* Image gallery for portfolio feel */
-    .gallery{
-      display:grid; gap:var(--s-4);
-      grid-template-columns:repeat(12, 1fr);
+    /* Sections & Grid */
+    section { padding: var(--s-7) 0; }
+    h2 { text-align: center; margin-bottom: var(--s-5); font-size: 2rem; }
+    
+    .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    
+    .card {
+      background: var(--card); border-radius: var(--radius); padding: var(--s-5);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
     }
-    .gallery .item{grid-column:span 6;}
-    .gallery .item--wide{grid-column:span 12;}
-    @media (max-width:900px){
-      .gallery .item, .gallery .item--wide{grid-column:span 12;}
-    }
-    .media{
-      border-radius:var(--radius); overflow:hidden; background:#111;
-      aspect-ratio:16/9;
-    }
-    .media img{width:100%; height:100%; object-fit:cover;}
-
-    /* About */
-    .about{
-      display:grid; gap:var(--s-5);
+    
+    footer { background: #0f172a; color: #94a3b
