@@ -1,92 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skousen Works | Mechanical Design</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-    <style>
-        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
-        @keyframes fillProgress { from { width: 0%; } to { width: var(--progress-width); } }
-        .animate-progress { animation: fillProgress 1.5s ease-out forwards; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Skousen Works | Mechanical Design & Automation Engineering</title>
+  <style>
+    body {margin:0; font-family: 'Inter', sans-serif; background:#f7f7f7; color:#333;}
+    header {padding:80px 20px; text-align:center; background:white;}
+    header h1 {font-size:3em; margin-bottom:10px;}
+    header p {font-size:1.2em; max-width:600px; margin:0 auto;}
+    .btn {padding:12px 24px; background:#2d6cdf; color:white; border-radius:6px; text-decoration:none; font-weight:600;}
+    section {padding:60px 20px; max-width:1000px; margin:auto;}
+    h2 {text-align:center; margin-bottom:40px;}
+    .grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
+    .card {background:white; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+    footer {text-align:center; padding:30px; background:white; margin-top:40px;}
+  </style>
 </head>
-<body class="bg-white text-slate-900 font-sans">
 
-    <div class="fixed inset-0 z-[-1] opacity-10 pointer-events-none">
-        <svg class="absolute -top-16 -right-16 fill-slate-300 animate-spin-slow" width="300" height="300" viewBox="0 0 100 100">
-            <path d="M50 10l5 15h10l5-15 10 5-5 15h10l5-15 10 5v15l-10 5v10l10 5v15l-10 5v10l-10 5v-15h-10l-5 15-10-5 5-15h-10l-5 15-10-5v-15l10-5v-10l-10-5v-15l10-5z"></path>
-        </svg>
+<body>
+
+<header>
+  <h1>Skousen Works</h1>
+  <p>Mechanical 3D Design • Manufacturing Automation • Engineering Consulting</p>
+  <a class="btn" href="#contact">Work With Me</a>
+</header>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Mechanical 3D Design</h3>
+      <p>High‑quality CAD modeling, product development, DFM, tooling design, 
+      engineering drawings, and assembly modeling.</p>
     </div>
 
-    <nav class="p-6 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
-        <span class="text-xl font-bold tracking-tighter">SKOUSEN<span class="text-blue-600">WORKS</span></span>
-        <div class="space-x-4 md:space-x-6 text-sm font-medium">
-            <a href="#about" class="hover:text-blue-600 transition">About</a>
-            <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-            <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-            <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-        </div>
-    </nav>
+    <div class="card">
+      <h3>Manufacturing Automation</h3>
+      <p>Automation concepts, fixture design, assembly tooling, process improvement,
+      and mechanical automation systems.</p>
+    </div>
 
-    <section id="about" class="max-w-4xl mx-auto p-6 py-20">
-        <div class="flex flex-col md:flex-row items-center gap-10">
-            <div class="w-48 h-48 rounded-full border-4 border-blue-600 overflow-hidden shadow-lg flex-shrink-0">
-    <img src="IMG_8695.jpeg" alt="Jacob Skousen" class="w-full h-full object-cover">
-</div>
-            <div>
-                <h1 class="text-4xl font-black mb-4 italic">PRECISION DESIGN.</h1>
-                <p class="text-lg text-slate-600 leading-relaxed">
-                    I am a **Mechanical Designer** with a background in automotive and industrial engineering. 
-                    From heavy equipment at **The PAC Group** to tool and die work at **Weld Mold Company**, 
-                    I specialize in **CATIA V5** and **SolidWorks** to bridge the gap between digital precision and physical reality.
-                </p>
-            </div>
-        </div>
-    </section>
+  </div>
+</section>
 
-    <section id="skills" class="max-w-4xl mx-auto p-6 py-20 border-t border-slate-100">
-        <h3 class="text-2xl font-bold mb-8 uppercase tracking-widest text-blue-600">Technical Skills</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="space-y-4">
-                <div class="flex justify-between font-bold"><span>CATIA V5</span><span>95%</span></div>
-                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full animate-progress" style="--progress-width: 95%"></div></div>
-                <div class="flex justify-between font-bold"><span>SolidWorks</span><span>85%</span></div>
-                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-blue-600 rounded-full animate-progress" style="--progress-width: 85%"></div></div>
-            </div>
-            <div class="space-y-4">
-                <div class="flex justify-between font-bold"><span>Automotive Design</span><span>90%</span></div>
-                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-emerald-500 rounded-full animate-progress" style="--progress-width: 90%"></div></div>
-                <div class="flex justify-between font-bold"><span>Manufacturing / DFM</span><span>85%</span></div>
-                <div class="w-full h-2 bg-slate-100 rounded-full"><div class="h-2 bg-emerald-500 rounded-full animate-progress" style="--progress-width: 85%"></div></div>
-            </div>
-        </div>
-    </section>
+<section id="portfolio">
+  <h2>Portfolio & Case Studies</h2>
+  <div class="grid">
+    <div class="card"><h3>Automated Assembly Fixture</h3>
+      <p>Reduced cycle time by 30% using a custom mechanical alignment and clamping system.</p>
+    </div>
+    <div class="card"><h3>3D CAD Assembly Design</h3>
+      <p>Created a manufacturable subsystem with full drawings, BOM, and GD&T.</p>
+    </div>
+    <div class="card"><h3>Process Optimization</h3>
+      <p>Improved throughput and reduced variation with redesigned mechanical workflow.</p>
+    </div>
+  </div>
+</section>
 
-    <section id="projects" class="max-w-4xl mx-auto p-6 py-20 border-t border-slate-100">
-        <h3 class="text-2xl font-bold mb-8">Featured Projects</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
-                <div class="h-64 bg-slate-50 rounded-xl mb-4 overflow-hidden">
-                    <model-viewer src="Honda Logo Stand.glb" auto-rotate camera-controls style="width:100%; height:100%;"></model-viewer>
-                </div>
-                <h4 class="font-bold text-lg">Honda Logo Stand</h4>
-                <p class="text-slate-500 text-sm">Precision 3D printed display stand.</p>
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p style="max-width:700px; margin:auto; text-align:center;">
+    I'm Jacob Skousen — a mechanical designer and automation engineer specializing in
+    production‑ready 3D CAD design and efficient mechanical automation solutions.
+    I help companies turn concepts into reliable, manufacturable results.
+  </p>
+</section>
 
-    <section id="contact" class="max-w-4xl mx-auto p-6 py-20 text-center border-t border-slate-100">
-        <h3 class="text-2xl font-bold mb-6">Let's Connect</h3>
-        <a href="https://www.linkedin.com/in/jacob-skousen-52b40236/" target="_blank" class="inline-flex items-center gap-2 bg-[#0a66c2] text-white px-8 py-3 rounded-xl font-bold hover:scale-105 transition shadow-lg">
-            Connect on LinkedIn
-        </a>
-    </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center;">Email me: <strong>your-email@example.com</strong></p>
+</section>
 
-    <footer class="p-8 text-center text-slate-400 text-xs uppercase tracking-widest">
-        &copy; 2024 Skousen Works
-    </footer>
+<footer>
+  © 2026 Skousen Works
+</footer>
+
 </body>
 </html>
