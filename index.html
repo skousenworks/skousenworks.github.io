@@ -76,4 +76,136 @@
       background: var(--card-bg);
       padding: 2.5rem;
       border-radius: var(--radius);
-      border
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: var(--transition);
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+    .card h3 { margin-bottom: 1rem; color: var(--accent); }
+    .card ul { list-style: none; margin-top: 1.5rem; }
+    .card li { margin-bottom: 0.5rem; color: var(--muted); display: flex; align-items: center; }
+    .card li::before { content: "→"; margin-right: 10px; color: var(--accent); }
+
+    /* Project Specific Styles */
+    .project-card { padding: 0; overflow: hidden; }
+    .project-img { width: 100%; height: 250px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .project-info { padding: 1.5rem; }
+
+    /* Footer & Contact */
+    #contact { background: #0a0f1d; }
+    footer { padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 80px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">SKOUSEN<span>WORKS</span></div>
+      <div class="nav-links">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>High-Precision Fixturing <br> for Robotic Welding.</h1>
+      <p>Engineering custom mechanical solutions and robotic weldment jigs built for sub-millimeter repeatability and thermal stability.</p>
+      <a href="#contact" class="btn btn-primary">Start a Consultation</a>
+    </div>
+  </header>
+
+  <section id="capabilities" class="container">
+    <div class="section-title">
+      <h2>Technical Capabilities</h2>
+      <p>Specialized engineering for complex industrial fabrication.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Mechanical Design</h3>
+        <p>Full-cycle hardware development from concept sketching to production CAD.</p>
+        <ul>
+          <li>3D Parametric Modeling</li>
+          <li>Design for Assembly (DFA)</li>
+          <li>Structural FEA Analysis</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Robotic Tooling & Fixtures</h3>
+        <p>Custom-engineered hardware designed to eliminate bottlenecks in automated cells.</p>
+        <ul>
+          <li>Robotic Welding Fixtures</li>
+          <li>Precision Weldment Jigs</li>
+          <li>Custom End-of-Arm Tooling</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Manufacturing Prep</h3>
+        <p>Technical documentation and prototyping to ensure a seamless floor rollout.</p>
+        <ul>
+          <li>Detailed Shop Drawings</li>
+          <li>BOM & Hardware Sourcing</li>
+          <li>CNC Toolpath Strategy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="background: rgba(255,255,255,0.02);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Past Projects</h2>
+        <p>Proven solutions delivered for manufacturing and design challenges.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card project-card">
+          <img src="IMG_8695.jpeg" alt="Precision Hardware" class="project-img">
+          <div class="project-info">
+            <h4 style="color: var(--accent);">Custom Precision Assembly</h4>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem;">Engineered for high-durability and specific clearance requirements.</p>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=800" alt="Tool Design" class="project-img">
+          <div class="project-info">
+            <h4 style="color: var(--accent);">Honda Logo Stand Design</h4>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem;">Conceptual design and STL preparation for custom branding hardware.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container" style="text-align: center;">
+      <div class="section-title">
+        <h2>Get In Touch</h2>
+        <p>Let's discuss your next weldment jig or mechanical design project.</p>
+      </div>
+      <div class="card" style="max-width: 600px; margin: 0 auto;">
+        <p style="margin-bottom: 1rem;">Direct Email:</p>
+        <a href="mailto:hello@skousenworks.com" style="font-size: 1.5rem; color: var(--accent); font-weight: 700;">hello@skousenworks.com</a>
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--muted);">Based in Columbus, Ohio | Available for Remote Design Contracts</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Skousen Works. Built for high-performance engineering.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
