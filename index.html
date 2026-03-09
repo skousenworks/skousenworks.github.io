@@ -1,81 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Skousen Works | Mechanical Design & Automation Engineering</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skousen Works | Mechanical Design & Manufacturing Automation</title>
+
+  <!-- Simple, reliable system font stack for performance -->
   <style>
-    body {margin:0; font-family: 'Inter', sans-serif; background:#f7f7f7; color:#333;}
-    header {padding:80px 20px; text-align:center; background:white;}
-    header h1 {font-size:3em; margin-bottom:10px;}
-    header p {font-size:1.2em; max-width:600px; margin:0 auto;}
-    .btn {padding:12px 24px; background:#2d6cdf; color:white; border-radius:6px; text-decoration:none; font-weight:600;}
-    section {padding:60px 20px; max-width:1000px; margin:auto;}
-    h2 {text-align:center; margin-bottom:40px;}
-    .grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
-    .card {background:white; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-    footer {text-align:center; padding:30px; background:white; margin-top:40px;}
-  </style>
-</head>
+    :root{
+      --bg:#f7f7f9;
+      --text:#1e1e24;
+      --muted:#5c6670;
+      --brand:#2d6cdf;      /* Accent color */
+      --card:#ffffff;
+      --radius:14px;
 
-<body>
+      /* Spacing scale (8px baseline) */
+      --s-1:8px;
+      --s-2:12px;
+      --s-3:16px;
+      --s-4:24px;
+      --s-5:32px;
+      --s-6:48px;
+      --s-7:72px;
+      --s-8:96px;
+    }
 
-<header>
-  <h1>Skousen Works</h1>
-  <p>Mechanical 3D Design • Manufacturing Automation • Engineering Consulting</p>
-  <a class="btn" href="#contact">Work With Me</a>
-</header>
+    /* Reset-ish */
+    *,*::before,*::after{box-sizing:border-box;}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height:1.55;
+    }
+    img{max-width:100%; height:auto; display:block;}
+    a{color:var(--brand); text-decoration:none;}
+    .container{max-width:1100px; margin:0 auto; padding:0 var(--s-3);}
 
-<section id="services">
-  <h2>Services</h2>
-  <div class="grid">
+    /* Header / Hero */
+    .hero{
+      position:relative; isolation:isolate; overflow:hidden;
+      background:#0f172a; color:#fff;
+    }
+    .hero__media{
+      position:absolute; inset:0; z-index:0; overflow:hidden;
+    }
+    .hero__media img{
+      width:100%; height:100%; object-fit:cover; object-position:center;
+      filter:grayscale(0.1) brightness(0.75) contrast(1.1);
+      transform:scale(1.02);
+    }
+    .hero__overlay{
+      position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,23,42,0.60), rgba(15,23,42,0.85));
+      z-index:1;
+    }
+    .hero__content{
+      position:relative; z-index:2; padding:var(--s-8) 0 var(--s-7);
+      text-align:center;
+    }
+    .hero h1{
+      font-size:clamp(28px, 4vw, 44px);
+      margin:0 0 var(--s-3);
+      letter-spacing:0.2px;
+    }
+    .hero p{
+      max-width:720px; margin:0 auto var(--s-5); color:#e5e7eb;
+      font-size:clamp(16px, 2.2vw, 18px);
+    }
+    .btn{
+      display:inline-block; padding:12px 22px; border-radius:10px; font-weight:600;
+      background:var(--brand); color:#fff;
+      box-shadow:0 10px 18px rgba(45,108,223,0.25);
+    }
+    .btn--ghost{
+      background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4);
+      margin-left:var(--s-3);
+    }
 
-    <div class="card">
-      <h3>Mechanical 3D Design</h3>
-      <p>High‑quality CAD modeling, product development, DFM, tooling design, 
-      engineering drawings, and assembly modeling.</p>
-    </div>
+    /* Sections */
+    section{padding:var(--s-7) 0;}
+    section h2{
+      text-align:center; margin:0 0 var(--s-5); font-size:clamp(22px, 2.8vw, 30px);
+      letter-spacing:0.2px;
+    }
+    .lede{max-width:760px; margin:0 auto var(--s-5); color:var(--muted); text-align:center;}
 
-    <div class="card">
-      <h3>Manufacturing Automation</h3>
-      <p>Automation concepts, fixture design, assembly tooling, process improvement,
-      and mechanical automation systems.</p>
-    </div>
+    /* Cards / Grids */
+    .grid{
+      display:grid; gap:var(--s-4);
+      grid-template-columns:repeat(12, 1fr);
+    }
+    .cards > .card{
+      grid-column:span 6;
+    }
+    @media (max-width:900px){
+      .cards > .card{grid-column:span 12;}
+    }
+    .card{
+      background:var(--card); border-radius:var(--radius); padding:var(--s-5);
+      box-shadow:0 8px 24px rgba(16,24,40,0.06);
+    }
+    .card h3{margin:0 0 var(--s-2); font-size:20px;}
+    .card p{margin:0; color:var(--muted);}
+    .card ul{margin:var(--s-3) 0 0; padding-left:1.2rem; color:var(--muted);}
+    .card li{margin:6px 0;}
 
-  </div>
-</section>
+    /* Image gallery for portfolio feel */
+    .gallery{
+      display:grid; gap:var(--s-4);
+      grid-template-columns:repeat(12, 1fr);
+    }
+    .gallery .item{grid-column:span 6;}
+    .gallery .item--wide{grid-column:span 12;}
+    @media (max-width:900px){
+      .gallery .item, .gallery .item--wide{grid-column:span 12;}
+    }
+    .media{
+      border-radius:var(--radius); overflow:hidden; background:#111;
+      aspect-ratio:16/9;
+    }
+    .media img{width:100%; height:100%; object-fit:cover;}
 
-<section id="portfolio">
-  <h2>Portfolio & Case Studies</h2>
-  <div class="grid">
-    <div class="card"><h3>Automated Assembly Fixture</h3>
-      <p>Reduced cycle time by 30% using a custom mechanical alignment and clamping system.</p>
-    </div>
-    <div class="card"><h3>3D CAD Assembly Design</h3>
-      <p>Created a manufacturable subsystem with full drawings, BOM, and GD&T.</p>
-    </div>
-    <div class="card"><h3>Process Optimization</h3>
-      <p>Improved throughput and reduced variation with redesigned mechanical workflow.</p>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p style="max-width:700px; margin:auto; text-align:center;">
-    I'm Jacob Skousen — a mechanical designer and automation engineer specializing in
-    production‑ready 3D CAD design and efficient mechanical automation solutions.
-    I help companies turn concepts into reliable, manufacturable results.
-  </p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p style="text-align:center;">Email me: <strong>your-email@example.com</strong></p>
-</section>
-
-<footer>
-  © 2026 Skousen Works
-</footer>
-
-</body>
-</html>
+    /* About */
+    .about{
+      display:grid; gap:var(--s-5);
